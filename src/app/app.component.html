@@ -1,4 +1,4 @@
 <main>
-  <todo-form (onSubmit)="addTask(newTask)"></todo-form>
-  <todo-list></todo-list>
+  <todo-form (formSubmit)="addTask($event)"></todo-form>
+  <todo-list (deleteTaskClick)="removeTask($event)" [tasks]="tasks"></todo-list>
 </main>

@@ -15,18 +15,20 @@ export class TasksService {
     this.list = this.loadLocalData();
   }
 
-  addTask(task: Task): void {
+  public addTask(task: Task): void {
+    console.log(task);
     this.list.push(task);
+    console.log(this.list);
+    this.saveLocalData();
   }
 
+  public removeTask(task : Task): void {
+    this.list.splice(this.list.indexOf(task), 1);
+    this.saveLocalData();
+  }
+  
   public getTasks(): Task[] {
     return this.list; 
-  }
-
-  private removeTask(task : Task): void {
-    this.list.splice(this.list.indexOf(task), 1);
-    // this.render();
-    this.saveLocalData();
   }
 
   private saveLocalData(): void {

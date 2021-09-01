@@ -9,19 +9,21 @@ import { Task } from './models/Task';
 })
 export class AppComponent {
   
-  public newTask!: Task;
-  public list: Task[];
+  public tasks: Task[];
   private ts: TasksService = new TasksService();
 
   constructor() {
-    this.list = this.ts.getTasks();
+    this.tasks = this.ts.getTasks();
   }
 
   ngOnInit(): void { }
 
   addTask(task: Task) {
     this.ts.addTask(task);
-    this.newTask = task;
+  }
+
+  removeTask(task: Task) {
+    this.ts.removeTask(task);
   }
 
 }

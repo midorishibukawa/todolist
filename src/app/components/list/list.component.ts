@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Task } from 'src/app/models/Task';
-import { Priority } from 'src/app/models/Priority';
-import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'todo-list',
@@ -9,10 +7,20 @@ import { TasksService } from 'src/app/services/tasks.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  tasks!: Task[];
+
+  @Input() tasks!: Task[];
+  @Output() deleteTaskClick: EventEmitter<Task> = new EventEmitter();
   
   constructor() { }
   
   ngOnInit(): void { }
+
+  toggleDone(task: Task) {
+    task.done = !task.done;
+  }
+
+  deleteTask(task: Task) {
+    this.deleteTaskClick.emit(task);
+  }
 
 }

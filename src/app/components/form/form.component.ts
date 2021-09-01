@@ -17,9 +17,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit(txt: string): void {
-    console.log(txt);
     if (!txt) return;
-    if (String(txt).match(/^#(1|2|3)\s/)) {
+    if (txt.match(/^#(1|2|3)\s/)) {
       this.formSubmit.emit(this.newTask(txt.slice(3), Number(txt.slice(1, 2))));
     } else {
       this.formSubmit.emit(this.newTask(txt, 1));
