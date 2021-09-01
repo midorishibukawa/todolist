@@ -1,4 +1,4 @@
-<form #newTask="ngForm" (ngSubmit)="onSubmit(newTask.value.tf_2do)" id="form">
-    <input ngModel type="text" name="tf_2do" id="tf_2do" autocomplete="off">
+<form (ngSubmit)="onSubmit(newTaskTxt)" id="form">
+    <input [(ngModel)]="newTaskTxt" type="text" name="tf_2do" id="tf_2do" autocomplete="off">
     <button type="submit">Salvar</button>
 </form>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Priority } from 'src/app/models/Priority';
 import { Task } from 'src/app/models/Task';
 
@@ -12,6 +13,8 @@ export class FormComponent implements OnInit {
 
   @Output() formSubmit: EventEmitter<Task> = new EventEmitter();
 
+  newTaskTxt!: string;
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -23,6 +26,7 @@ export class FormComponent implements OnInit {
     } else {
       this.formSubmit.emit(this.newTask(txt, 1));
     }
+    this.newTaskTxt = '';
   } 
 
   private newTask(txt: string, priority?: Priority) : Task {
