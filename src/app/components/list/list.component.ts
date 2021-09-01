@@ -9,7 +9,8 @@ import { Task } from 'src/app/models/Task';
 export class ListComponent implements OnInit {
 
   @Input() tasks!: Task[];
-  @Output() deleteTaskClick: EventEmitter<Task> = new EventEmitter();
+  @Output() removeTaskClick: EventEmitter<Task> = new EventEmitter();
+  @Output() toggleTaskDoneClick: EventEmitter<Task> = new EventEmitter();
   
   constructor() { }
   
@@ -17,10 +18,11 @@ export class ListComponent implements OnInit {
 
   toggleDone(task: Task) {
     task.done = !task.done;
+    this.toggleTaskDoneClick.emit(task);
   }
 
-  deleteTask(task: Task) {
-    this.deleteTaskClick.emit(task);
+  removeTask(task: Task) {
+    this.removeTaskClick.emit(task);
   }
 
 }

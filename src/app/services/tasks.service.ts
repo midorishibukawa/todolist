@@ -31,7 +31,7 @@ export class TasksService {
     return this.list; 
   }
 
-  private saveLocalData(): void {
+  public saveLocalData(): void {
     window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.list));
   }
 

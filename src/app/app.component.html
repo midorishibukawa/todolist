@@ -1,4 +1,4 @@
 <main>
   <todo-form (formSubmit)="addTask($event)"></todo-form>
-  <todo-list (deleteTaskClick)="removeTask($event)" [tasks]="tasks"></todo-list>
+  <todo-list (removeTaskClick)="removeTask($event)" (toggleTaskDoneClick)="save()" [tasks]="tasks"></todo-list>
 </main>

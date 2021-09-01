@@ -26,4 +26,8 @@ export class AppComponent {
     this.ts.removeTask(task);
   }
 
+  save() {
+    this.ts.saveLocalData();
+  }
+
 }

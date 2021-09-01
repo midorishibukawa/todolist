@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Priority } from 'src/app/models/Priority';
 import { Task } from 'src/app/models/Task';
 

@@ -1,6 +1,6 @@
 <tr [ngClass]="{'done': task.done}" *ngFor="let task of tasks">
-    <td><input (click)="toggleDone(task)" type="checkbox"></td>
+    <td><input (click)="toggleDone(task)" type="checkbox" [checked]="task.done"></td>
     <td>{{ task.txt }}</td>
-    <td><i (click)="deleteTask(task)" class="material-icons">delete</i></td>
+    <td><i (click)="removeTask(task)" class="material-icons">delete</i></td>
     <td class="priority">{{ task.priority }}</td>
 </tr>
