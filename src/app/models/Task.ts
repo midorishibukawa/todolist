@@ -1,7 +1,6 @@
 import { Priority } from "./Priority";
 export interface Task {
-    id: string,
-    name: string,
+    txt: string,
     done: boolean,
     priority?: Priority
 }

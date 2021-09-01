@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +16,7 @@ import { TaskComponent } from './components/task/task.component';
     TaskComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],

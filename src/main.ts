@@ -10,5 +10,3 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
-
-export const LOCAL_STORAGE_KEY:string = "todolist";
