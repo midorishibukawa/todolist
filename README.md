@@ -1,4 +1,7 @@
 # TodolistAngular
+Atividade de front-end para o curso Desenvolvimento Web Full-Stack Devs Academy da Digital House em parceria com a Deloitte.
+
+Foi utilizado o web framework Angular para desenvolvimento do projeto.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
 
